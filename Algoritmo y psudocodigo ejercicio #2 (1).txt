@@ -1,0 +1,63 @@
+Algoritmo
+
+1.Iniciar
+2.Inicializar suma_productos en 0
+3.Inicializar suma_pesos en 0
+4.Hacer un ciclo que se repita mientras el usuario quiera ingesar notas
+5.Pedir al usuario que ingrese una calificación (nota)
+6.Pedir al usuario que ingrese el porcentaje (peso) correspondiente a esa calificación
+7.Multiplicar la calificacion por su peso y agregar el resultado a suma_productos
+8.Agregar el peso ingresado a suma_pesos
+9.Preguntar al usuario si desea ingresar otra nota. Si la respuesta es "no", salir del ciclo
+10.Calcular el promedio ponderado dividiendo suma_productos entre suma_pesos
+11.Mostrar el promedio ponderado
+12.Finlizar
+
+
+Pseudocodigo
+start 
+
+// Declaracion de variables 
+
+Declare float nota
+Declare float peso
+Declare float suma_productos
+Declare float suma_pesos
+Declare float promedio_ponderado
+Declare string respuesta
+
+// Inicializar variables
+
+set suma_productos = 0
+set suma_pesos = 0
+set respuesta ="si"
+
+// Realizar un ciclo para ingresar notas
+
+while respuesta == "si" do
+ // pedir datos al usuario
+    Display "Ingrese la calificacion (nota)"
+    input nota
+
+    Display "Ingrese el porcentaje (peso) correspondiente a esa calificacion"
+    input peso
+// calcular producto y peso
+    set suma_productos = suma_productos + (nota * peso)
+    set suma_pesos = suma_pesos + peso
+
+// pregunta si desea ingresar otra nota 
+    Display "¿Desea ingresar otra nota? (si/no)"
+    input respuesta
+end while
+
+//Calcular promedi ponderado
+
+if suma_pesos > 0 then
+    set promedio_ponderado = suma_productos / suma_pesos 
+// Mostrar resultado final
+    Display "El promedio ponderado es: ", promedio_ponderado
+else
+    Display "No se ingresaron notas válidas."
+end if
+
+End
